@@ -1,8 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>利用hexo创建博客--折腾与踩坑记录</title>
+    <url>/2023/07/26/%E5%88%A9%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%8A%98%E8%85%BE%E4%B8%8E%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>严格意义上来说，这是我的第一篇博客。主要来讲一下使用Hexo+GitHub搭建私人博客的流程。<br>许多其他的博主都有说明，网上也都有很多教程，主要来讲一下我在折腾过程中踩的一些坑。<br>文章完全是基于小白写的，毕竟本人HTML、js、css一点没学过，甚至markdown都是现学的，正因为我是弱者，所以才能站在弱者的角度考虑嘛（笑。所以大佬们可以绕路了，出进门左拐，有的是高手。</p>
+<pre><code>本篇包括：
+    1. windows环境下的操作
+    2. 过程中可能踩到的坑与解决方法
+    3. 一些烂梗（个人兴趣罢了）
+本篇不包括：
+    其他一切内容
+</code></pre>
+<h5 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h5><ul>
+<li>一个能用的电脑</li>
+<li>能访问GitHub的网络环境及已注册的GitHub账号</li>
+<li>一定的英语水平（大概就是认识abcd即可）</li>
+<li>一个爱折腾的灵魂  </li>
+</ul>
+<h4 id="程序安装与设置"><a href="#程序安装与设置" class="headerlink" title="程序安装与设置"></a>程序安装与设置</h4><h5 id="一、安装Node"><a href="#一、安装Node" class="headerlink" title="一、安装Node"></a>一、安装Node</h5><p><a href="https://nodejs.org/en/download">Node.js官网</a><br>选择要下载的版本，LTS和Current都行。<br>一路next结束安装。</p>
+<h5 id="二、安装Git-Bash"><a href="#二、安装Git-Bash" class="headerlink" title="二、安装Git Bash"></a>二、安装Git Bash</h5><p><a href="https://git-scm.com/download/win">这里</a>，根据自己电脑是32位还是64位安装适宜的版本，建议选择<strong>Standalone Installer</strong>中的，之后配置起来相对方便。<br>一路next结束安装。<br><strong>注意：这里稍后可能调用git时会报错，可以尝试右键</strong> <em><strong>此电脑-属性-高级系统设置-环境变量</strong></em> <strong>中找到Path，编辑添加，安装目录下bin位置</strong><br><img src="/.com//1-1.jpg" alt="1-1" title="bin位置">  </p>
+<p><img src="/.com//1-2.jpg" alt="2-2" title="变量设置"></p>
+<h5 id="三、配置hexo"><a href="#三、配置hexo" class="headerlink" title="三、配置hexo"></a>三、配置hexo</h5><h6 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h6><p>管理员启动终端输入命令：</p>
+<pre><code>npm install hexo-cli -g
+</code></pre>
+<p>安装Hexo本体。<br>**若出现<code>禁止运行脚本</code>报错，解决办法见<a href="https://www.jianshu.com/p/4eaad2163567">https://www.jianshu.com/p/4eaad2163567</a><br>新建文件夹，名字自定义，建议放在英文目录下，以避免一些路径识别的问题。运行命令：</p>
+<pre><code>hexo init
+</code></pre>
+<p>初始化Hexo，随后运行：</p>
+<pre><code>hexo clean    #清除缓存文件
+hexo g    #生成网站静态文件到默认设置的public文件夹。
+hexo s    #启动本地服务器
+</code></pre>
+<p>这时候打开<a href="http://localhost:4000/">http://localhost:4000/</a> 应该就能看见一个简陋的博客跑起来了<br><img src="/.com//1-3.jpg" alt="1-3" title="默认首页"><br>如果对这门面没什么要求的话，这时候，就可以直接开用了。</p>
+<h6 id="设置hexo"><a href="#设置hexo" class="headerlink" title="设置hexo"></a>设置hexo</h6><p>打开博客根目录下有一个<code>_config.yml</code>文件，这个就是你的全局设置文件。<br>里面有一些项需要设置一下，以本博客为例：</p>
+<pre><code># Site
+title: 白某的鞋盒子    #网站标签标题
+subtitle: &#39;喵~?&#39;    #博客副标题
+description: &#39;喵喵喵!&#39;    #博客描述
+keywords:    #关键字，一般不用管
+author: 白鞋油    #作者
+language: zh-CN    #语言
+timezone: &#39;&#39;    #时区，一般不用管
+</code></pre>
+<p><strong>※</strong>这里需要特地注明一下，<strong>语言选项是根据所选主题设置的，即要填的是主题中language文件夹中的名称，不然会报错</strong>，稍后会谈到这点，这里先挖个坑。<br>剩下的设置一般情况下是不需要改的，后面会稍有提到。</p>
+<h4 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h4><p>关于主题的选择，可供参考的教程非常多，且根据所选用主题不同有所差异。<br>这里主要讲一下本人选择的<a href="https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic-Next">Hexo-Theme-Acrylic-Next</a>主题。<br>博客根目录运行</p>
+<pre><code>git clone -b main https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic-Next.git themes/Acrylic
+</code></pre>
+<p>安装主题。<br>修改全局设置<code>theme</code>后默认的<code>landscape</code>为<code>Acrylic</code>即可应用主题。<br>主题配置可参考<a href="https://next-docs.acrylic.org.cn/introduction/introduction">https://next-docs.acrylic.org.cn/introduction/introduction</a> 作者自己讲的非常清楚。<br>**※有几个坑点： ** </p>
+<ol>
+<li>语言文件’zh-Ch’中间为横杠并非下划线，打错的话不是启动报错就是一堆undefined和NaN</li>
+<li>要是打开里面的banner选项，下面注释掉的图片也需要启用，不然启动服务器的时候会报错</li>
+<li>站点信息的访问量统计我的建议是关掉，光我自己测试网站就刷了8000多次，属是有点。。</li>
+<li><strong>划重点</strong>关于GitHub访问。我的建议是下载<code>SwitchHost</code>，详细见<a href="https://blog.csdn.net/lilyssh/article/details/118192010">https://blog.csdn.net/lilyssh/article/details/118192010</a>  </li>
+</ol>
+<h4 id="上传GitHub"><a href="#上传GitHub" class="headerlink" title="上传GitHub"></a>上传GitHub</h4><p>现在，你有一个能够稳定访问GitHub的设备啦。<br>那么首先，</p>
+<h5 id="配置ssh"><a href="#配置ssh" class="headerlink" title="配置ssh"></a>配置ssh</h5><h6 id="创建密钥"><a href="#创建密钥" class="headerlink" title="创建密钥"></a>创建密钥</h6><p>管理员终端运行命令</p>
+<pre><code>git config --global user.name &quot;GitHub 用户名&quot;
+git config --global user.email &quot;GitHub 邮箱&quot;
+</code></pre>
+<p>设置用户名与邮箱<br>随后运行</p>
+<pre><code>ssh-keygen -t rsa -C &quot;GitHub 邮箱&quot;
+</code></pre>
+<p>首次创建时一直回车就行，再次创建时需要中间确认覆盖一次。<br><img src="/.com//1-4.png" alt="1-4" title="运行结果"><br>随后找到<strong>用户名目录下的.ssh目录</strong><br><img src="/.com//1-5.png" alt="1-5"><br>记事本打开<code>id_rsa.pub</code>文件，里面就是密钥。<br>找到GitHub用户设置，找到<code>ssh and GPG keys</code>，新建，名称随便填，key里填刚刚复制的内容，添加。<br><img src="/.com//1-6.png" alt="1-6" title="用户设置"><br><img src="/.com//1-7.png" alt="1-7" title="新建"><br>终端运行</p>
+<pre><code>ssh -T git@github.com
+</code></pre>
+<p>确认连接成功。<br><img src="/.com//1-8.png" alt="1-8" title="连接成功">  </p>
+<h6 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h6><p>主页新建项目，<code>Repository name</code>必须要起<code>自己用户名+.github.io</code>，不然最后访问不了自己的博客。<br>选择<code>public</code>，其余随意。<br><img src="/.com//1-9.png" alt="1-9" title="选项"><br>随后教程详见<a href="https://blog.csdn.net/Night__breeze/article/details/117607049">https://blog.csdn.net/Night__breeze/article/details/117607049</a> 我实在懒得写了。<br>随后运行<code>hexo d</code>上传，这时候你可能会遇到一个问题：<br><img src="/.com//1-10.png" alt="1-10" title="报错"><br>解决方案见<a href="https://blog.csdn.net/Andone_hsx/article/details/87937329">https://blog.csdn.net/Andone_hsx/article/details/87937329</a><br>博客根目录重启终端，再次运行，成功。</p>
+<p>至此，你已经可以在<code>用户名.github.io</code>访问你的博客了，恭喜恭喜，你也是有博客的人了XD。</p>
+<p><strong>那么就先聊这么多，接下来还会有关于文章写作，白嫖域名等一些内容，应该讲的不多，留到下次说吧</strong></p>
+]]></content>
+      <tags>
+        <tag>折腾</tag>
+        <tag>踩坑</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
-    <url>/2023/07/25/hello-world/</url>
+    <url>/2023/07/26/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
