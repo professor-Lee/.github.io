@@ -36,8 +36,8 @@
 <li>一个爱折腾的灵魂  </li>
 </ul>
 <h4 id="程序安装与设置"><a href="#程序安装与设置" class="headerlink" title="程序安装与设置"></a>程序安装与设置</h4><h5 id="一、安装Node"><a href="#一、安装Node" class="headerlink" title="一、安装Node"></a>一、安装Node</h5><p><a href="https://nodejs.org/en/download">Node.js官网</a><br>选择要下载的版本，LTS和Current都行。<br>一路next结束安装。</p>
-<h5 id="二、安装Git-Bash"><a href="#二、安装Git-Bash" class="headerlink" title="二、安装Git Bash"></a>二、安装Git Bash</h5><p><a href="https://git-scm.com/download/win">这里</a>，根据自己电脑是32位还是64位安装适宜的版本，建议选择<strong>Standalone Installer</strong>中的，之后配置起来相对方便。<br>一路next结束安装。<br><strong>注意：这里稍后可能调用git时会报错，可以尝试右键</strong> <em><strong>此电脑-属性-高级系统设置-环境变量</strong></em> <strong>中找到Path，编辑添加，安装目录下bin位置</strong><br><img src="/img/1-1.jpg" alt="1-1" title="bin位置">  </p>
-<p><img src="/img/1-2.jpg" alt="2-2" title="变量设置"></p>
+<h5 id="二、安装Git-Bash"><a href="#二、安装Git-Bash" class="headerlink" title="二、安装Git Bash"></a>二、安装Git Bash</h5><p><a href="https://git-scm.com/download/win">这里</a>，根据自己电脑是32位还是64位安装适宜的版本，建议选择<strong>Standalone Installer</strong>中的，之后配置起来相对方便。<br>一路next结束安装。<br><strong>注意：这里稍后可能调用git时会报错，可以尝试右键</strong> <em><strong>此电脑-属性-高级系统设置-环境变量</strong></em> <strong>中找到Path，编辑添加，安装目录下bin位置</strong><br><img src="/2023/07/26/%E5%88%A9%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%8A%98%E8%85%BE%E4%B8%8E%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/1-1.jpg" alt="1-1" title="bin位置">  </p>
+<p><img src="/2023/07/26/%E5%88%A9%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%8A%98%E8%85%BE%E4%B8%8E%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/1-2.jpg" alt="2-2" title="变量设置"></p>
 <h5 id="三、配置hexo"><a href="#三、配置hexo" class="headerlink" title="三、配置hexo"></a>三、配置hexo</h5><h6 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h6><p>管理员启动终端输入命令：</p>
 <pre><code>npm install hexo-cli -g
 </code></pre>
@@ -49,7 +49,7 @@
 hexo g    #生成网站静态文件到默认设置的public文件夹。
 hexo s    #启动本地服务器
 </code></pre>
-<p>这时候打开<a href="http://localhost:4000/">http://localhost:4000/</a> 应该就能看见一个简陋的博客跑起来了<br><img src="/img/1-3.jpg" alt="1-3" title="默认首页"><br>如果对这门面没什么要求的话，这时候，就可以直接开用了。</p>
+<p>这时候打开<a href="http://localhost:4000/">http://localhost:4000/</a> 应该就能看见一个简陋的博客跑起来了<br><img src="/2023/07/26/%E5%88%A9%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%8A%98%E8%85%BE%E4%B8%8E%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/1-3.jpg" alt="1-3" title="默认首页"><br>如果对这门面没什么要求的话，这时候，就可以直接开用了。</p>
 <h6 id="设置hexo"><a href="#设置hexo" class="headerlink" title="设置hexo"></a>设置hexo</h6><p>打开博客根目录下有一个<code>_config.yml</code>文件，这个就是你的全局设置文件。<br>里面有一些项需要设置一下，以本博客为例：</p>
 <pre><code># Site
 title: 白某的鞋盒子    #网站标签标题
@@ -79,11 +79,11 @@ git config --global user.email &quot;GitHub 邮箱&quot;
 <p>设置用户名与邮箱<br>随后运行</p>
 <pre><code>ssh-keygen -t rsa -C &quot;GitHub 邮箱&quot;
 </code></pre>
-<p>首次创建时一直回车就行，再次创建时需要中间确认覆盖一次。<br><img src="/img/1-4.png" alt="1-4" title="运行结果"><br>随后找到<strong>用户名目录下的.ssh目录</strong><br><img src="/img/1-5.png" alt="1-5"><br>记事本打开<code>id_rsa.pub</code>文件，里面就是密钥。<br>找到GitHub用户设置，找到<code>ssh and GPG keys</code>，新建，名称随便填，key里填刚刚复制的内容，添加。<br><img src="/img/1-6.png" alt="1-6" title="用户设置"><br><img src="/img/1-7.png" alt="1-7" title="新建"><br>终端运行</p>
+<p>首次创建时一直回车就行，再次创建时需要中间确认覆盖一次。<br><img src="/2023/07/26/%E5%88%A9%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%8A%98%E8%85%BE%E4%B8%8E%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/1-4.png" alt="1-4" title="运行结果"><br>随后找到<strong>用户名目录下的.ssh目录</strong><br><img src="/2023/07/26/%E5%88%A9%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%8A%98%E8%85%BE%E4%B8%8E%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/1-5.png" alt="1-5"><br>记事本打开<code>id_rsa.pub</code>文件，里面就是密钥。<br>找到GitHub用户设置，找到<code>ssh and GPG keys</code>，新建，名称随便填，key里填刚刚复制的内容，添加。<br><img src="/2023/07/26/%E5%88%A9%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%8A%98%E8%85%BE%E4%B8%8E%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/1-6.png" alt="1-6" title="用户设置"><br><img src="/2023/07/26/%E5%88%A9%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%8A%98%E8%85%BE%E4%B8%8E%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/1-7.png" alt="1-7" title="新建"><br>终端运行</p>
 <pre><code>ssh -T git@github.com
 </code></pre>
-<p>确认连接成功。<br><img src="/img/1-8.png" alt="1-8" title="连接成功">  </p>
-<h6 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h6><p>主页新建项目，<code>Repository name</code>必须要起<code>自己用户名+.github.io</code>，不然最后访问不了自己的博客。<br>选择<code>public</code>，其余随意。<br><img src="/img/1-9.png" alt="1-9" title="选项"><br>随后教程详见<a href="https://blog.csdn.net/Night__breeze/article/details/117607049">https://blog.csdn.net/Night__breeze/article/details/117607049</a> 我实在懒得写了。<br>随后运行<code>hexo d</code>上传，这时候你可能会遇到一个问题：<br><img src="/img/1-10.png" alt="1-10" title="报错"><br>解决方案见<a href="https://blog.csdn.net/Andone_hsx/article/details/87937329">https://blog.csdn.net/Andone_hsx/article/details/87937329</a><br>博客根目录重启终端，再次运行，成功。</p>
+<p>确认连接成功。<br><img src="/2023/07/26/%E5%88%A9%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%8A%98%E8%85%BE%E4%B8%8E%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/1-8.png" alt="1-8" title="连接成功">  </p>
+<h6 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h6><p>主页新建项目，<code>Repository name</code>必须要起<code>自己用户名+.github.io</code>，不然最后访问不了自己的博客。<br>选择<code>public</code>，其余随意。<br><img src="/2023/07/26/%E5%88%A9%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%8A%98%E8%85%BE%E4%B8%8E%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/1-9.png" alt="1-9" title="选项"><br>随后教程详见<a href="https://blog.csdn.net/Night__breeze/article/details/117607049">https://blog.csdn.net/Night__breeze/article/details/117607049</a> 我实在懒得写了。<br>随后运行<code>hexo d</code>上传，这时候你可能会遇到一个问题：<br><img src="/2023/07/26/%E5%88%A9%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%8A%98%E8%85%BE%E4%B8%8E%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/1-10.png" alt="1-10" title="报错"><br>解决方案见<a href="https://blog.csdn.net/Andone_hsx/article/details/87937329">https://blog.csdn.net/Andone_hsx/article/details/87937329</a><br>博客根目录重启终端，再次运行，成功。</p>
 <p>至此，你已经可以在<code>用户名.github.io</code>访问你的博客了，恭喜恭喜，你也是有博客的人了XD。</p>
 <p><strong>那么就先聊这么多，接下来还会有关于文章写作，白嫖域名等一些内容，应该讲的不多，留到下次说吧</strong></p>
 ]]></content>
