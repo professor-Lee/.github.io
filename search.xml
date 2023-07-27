@@ -87,6 +87,9 @@ git config --global user.email &quot;GitHub 邮箱&quot;
 <p>至此，你已经可以在<code>用户名.github.io</code>访问你的博客了，恭喜恭喜，你也是有博客的人了XD。</p>
 <p><strong>那么就先聊这么多，接下来还会有关于文章写作，白嫖域名等一些内容，应该讲的不多，留到下次说吧</strong></p>
 ]]></content>
+      <categories>
+        <category>折腾</category>
+      </categories>
       <tags>
         <tag>折腾</tag>
         <tag>踩坑</tag>
