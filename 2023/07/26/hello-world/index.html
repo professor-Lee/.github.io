@@ -28,12 +28,102 @@
 <script src="/lib/qrcode.min.js"></script>
 
 
+    
+<script src="https://cdn.staticfile.org/twikoo/1.6.10/twikoo.all.min.js"></script>
 
 
-<script>var GLOBALCONFIG = {"root":"/","runtime":"2023-7-25 00:00:00","lazyload":{"enable":true,"error":"/img/loaderror.gif"},"hightlight":{"enable":true,"limit":200},"lightbox":true,"randomlinks":false,"lang":{"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"recent":"最近","yesterday":"昨天","berforeyesterday":"前天","daybefore":"天前","runtime":"天"},"sayhello":{"morning":"早上好","noon":"中午好","afternoon":"下午好","night":"晚上好","goodnight":"晚安","iam":"!  我是"},"search":{"empty":"搜索结果为空","hit":"已为您找到 ${query} 条结果","placeholder":"输入关键词快速查找"}},"covercolor":true,"comment":{"enable":false,"twikooUrl":null},"localsearch":{"preload":false,"path":"/search.xml"}};</script><script id="site-config">var PAGECONFIG = {"is_home":false,"is_post":true,"is_page":false,"page":false,"toc":true,"comment":false};</script>
+
+
+<script>var GLOBALCONFIG = {"root":"/","runtime":"2023-7-25 00:00:00","lazyload":{"enable":true,"error":"/img/loaderror.gif"},"hightlight":{"enable":true,"limit":200},"lightbox":true,"randomlinks":false,"lang":{"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"recent":"最近","yesterday":"昨天","berforeyesterday":"前天","daybefore":"天前","runtime":"天"},"sayhello":{"morning":"早上好","noon":"中午好","afternoon":"下午好","night":"晚上好","goodnight":"晚安","iam":"!  我是"},"search":{"empty":"搜索结果为空","hit":"已为您找到 ${query} 条结果","placeholder":"输入关键词快速查找"}},"covercolor":true,"comment":{"enable":true,"twikooUrl":"https://blog-comment.zeabur.app"},"localsearch":{"preload":false,"path":"/search.xml"}};</script><script id="site-config">var PAGECONFIG = {"is_home":false,"is_post":true,"is_page":false,"page":false,"toc":true,"comment":true};</script>
 
     <meta name="generator" content="Hexo 6.3.0"></head>
     <body id="body">
+        
+            <div id="loading-box" onclick="preloader.endLoading();" class style="zoom: 1;">
+    <div class="loading-bg">
+        <img class="loading-img nolazyload" alt="loading image"
+            src="/img/avatar.webp">
+        </div>
+</div>
+<script>
+    const preloader = {
+        endLoading: () => {
+            document.getElementById('loading-box').classList.add("loaded")
+        },
+        initLoading: () => {
+            document.getElementById('loading-box').classList.remove("loaded")
+        },
+        removePaceDone: () => {
+            document.getElementById('body').classList = 'pace-done'
+        }
+    }
+    window.addEventListener('load',()=> { preloader.endLoading() })
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+</script>
+<style>
+    #loading-box {
+        -webkit-user-select: none;
+    }
+
+    #loading-box .loading-bg {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background: var(--heo-background);
+        z-index: 1999;
+        opacity: 1;
+        transition: 0.2s;
+        pointer-events: all;
+        animation: showLoading 0.3s 0s backwards;
+    }
+
+    #loading-box.loaded .loading-bg {
+        pointer-events: none;
+        transition: 0.2s;
+        animation: hideLoading 0.3s 0s forwards;
+    }
+
+    #loading-box .loading-img {
+        width: 100px;
+        margin: auto;
+        animation-duration: 0.2s;
+        animation-name: loadingAction;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
+    @keyframes loadingAction {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0.6;
+        }
+    }
+
+    @keyframes hideLoading {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+    }
+
+    @keyframes showLoading {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+</style>
         
         <div id="console" style="zoom: 1;" class="">
     <div class="close-btn" onclick="acrylic.hideConsole()" href="javascript:void(0);">
@@ -297,6 +387,58 @@
         <div class="post-tools" id="post-tools">
             <div class="post-tools-left">
                 
+                    <div class="post-reward">
+    <div class="reward-button button--animated" title="赞赏作者">
+        <script>
+            if (utils.isMobile()) { const showReward=()=> {
+                const rewardMain = document.querySelector('.reward-main');
+                rewardMain.style.display = 'flex';
+                document.addEventListener('touchstart', hideReward);
+                };
+                const hideReward = () => {
+                const rewardMain = document.querySelector('.reward-main');
+                rewardMain.style.display = 'none';
+                document.removeEventListener('touchstart', hideReward);
+                };
+                const rewardButton = document.querySelector('.reward-button');
+                rewardButton.addEventListener('touchstart', event => {
+                event.stopPropagation();
+                showReward();
+                });
+                }
+          </script>
+        <i class="fas fa-hamburger"></i> 
+        打赏作者
+    </div>
+    <div class="reward-main">
+        <ul class="reward-all">
+            <span class="reward-title">感谢你赐予我前进的力量</span>
+            <ul class="reward-group">
+                
+                    <li class="reward-item">
+                        <a href="/img/wechatpay.jpg" target="_blank">
+                            <img class="post-qr-code-img" src= "/img/load.gif" data-lazy-src="/img/wechatpay.jpg" alt="微信">
+                        </a>
+                        <div class="post-qr-code-desc">微信</div>
+                    </li>
+                
+                
+                    <li class="reward-item">
+                        <a href="/img/alipay.jpg" target="_blank">
+                            <img class="post-qr-code-img" src= "/img/load.gif" data-lazy-src="/img/alipay.jpg" alt="支付宝">
+                        </a>
+                        <div class="post-qr-code-desc">支付宝</div>
+                    </li>
+                
+            </ul>
+            <a class="reward-main-btn" href="/null">
+                <div class="reward-text">赞赏者名单</div>
+                <div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div>
+            </a>
+        </ul>
+    </div>
+</div>
+                
                 <div class="share-link mobile">
     <div class="share-qrcode">
         <div class="share-button" title="使用手机访问这篇文章">
@@ -370,6 +512,33 @@
         
     
 </nav>
+        
+            <div id="post-comment">
+    <div class="comment-head">
+        <div class="comment-headline">
+            <i class="fas fa-message fa-fw"></i>
+            <span> 评论</span>
+        </div>
+    </div>
+    <div class="comment-wrap">
+        <div id="comment"></div>
+        <script>
+    async function initComment(){
+        var initOptions = Object.assign(
+            {"envId":"https://blog-comment.zeabur.app","path":"window.location.pathname"},
+            {
+                el: '#comment',
+                onCommentLoaded: function() {
+                    GLOBALCONFIG.lightbox && acrylic.lightbox('#article-container img, #twikoo .tk-content img:not(.tk-owo-emotion)') 
+                }
+            }
+        )
+        await twikoo.init(initOptions)
+             
+    }
+</script>
+    </div>
+</div>
             
     </div>
     <div class="aside-content" id="aside-content">
@@ -559,6 +728,10 @@
 <script src="/js/extend/covercolor/local.js"></script>
 
         
+
+
+    
+<script src="/js/extend/console/comment.js"></script>
 
 
 
