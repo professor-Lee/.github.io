@@ -195,11 +195,15 @@
             <div class="card-tag-cloud">
                 
                     <a href="/tags/%E6%8A%98%E8%85%BE/" style="font-size: 1em; color: #d3d3d3">折腾
-                        <sup>1</sup>
+                        <sup>2</sup>
                     </a>
                 
                     <a href="/tags/%E8%B8%A9%E5%9D%91/" style="font-size: 1em; color: #d3d3d3">踩坑
-                        <sup>1</sup>
+                        <sup>2</sup>
+                    </a>
+                
+                    <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 1em; color: #d3d3d3">教程
+                        <sup>2</sup>
                     </a>
                 
             </div>
@@ -321,6 +325,8 @@
                 
                     <a class="post-meta-categories" href="/categories/%E6%8A%98%E8%85%BE/">折腾</a>
                 
+                    <a class="post-meta-categories" href="/categories/%E6%8A%98%E8%85%BE/%E6%95%99%E7%A8%8B/">教程</a>
+                
             </span>
             
             <div class="tag_share">
@@ -334,6 +340,11 @@
                         <a class="post-meta__tags" href="/tags/%E8%B8%A9%E5%9D%91/">
                             <span class="tags-punctuation">#</span>
                             <span class="tags-name">踩坑</span>
+                        </a>
+                    
+                        <a class="post-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">
+                            <span class="tags-punctuation">#</span>
+                            <span class="tags-name">教程</span>
                         </a>
                     
                 </div>
@@ -350,7 +361,7 @@
             
                 <span class="post-meta-date" title="更新于">
                     <i class="post-meta-icon fa-solid fa-clock-rotate-left"></i>
-                    <time datetime="2023-07-27T10:04:41+08:00"></time>
+                    <time datetime="2023-07-27T21:41:36+08:00"></time>
                 </span>
             
             
@@ -401,11 +412,11 @@
 </ul>
 <h4 id="程序安装与设置"><a href="#程序安装与设置" class="headerlink" title="程序安装与设置"></a>程序安装与设置</h4><h5 id="一、安装Node"><a href="#一、安装Node" class="headerlink" title="一、安装Node"></a>一、安装Node</h5><p><a target="_blank" rel="noopener" href="https://nodejs.org/en/download">Node.js官网</a><br>选择要下载的版本，LTS和Current都行。<br>一路next结束安装。</p>
 <h5 id="二、安装Git-Bash"><a href="#二、安装Git-Bash" class="headerlink" title="二、安装Git Bash"></a>二、安装Git Bash</h5><p><a target="_blank" rel="noopener" href="https://git-scm.com/download/win">这里</a>，根据自己电脑是32位还是64位安装适宜的版本，建议选择<strong>Standalone Installer</strong>中的，之后配置起来相对方便。<br>一路next结束安装。<br><strong>注意：这里稍后可能调用git时会报错，可以尝试右键</strong> <em><strong>此电脑-属性-高级系统设置-环境变量</strong></em> <strong>中找到Path，编辑添加，安装目录下bin位置</strong><br><img src= "/img/load.gif" data-lazy-src="/2023/07/26/%E5%88%A9%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%8A%98%E8%85%BE%E4%B8%8E%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/1-1.jpg" alt="1-1" title="bin位置">  </p>
-<p><img src= "/img/load.gif" data-lazy-src="/2023/07/26/%E5%88%A9%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%8A%98%E8%85%BE%E4%B8%8E%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/1-2.jpg" alt="2-2" title="变量设置"></p>
+<p><img src= "/img/load.gif" data-lazy-src="/2023/07/26/%E5%88%A9%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%8A%98%E8%85%BE%E4%B8%8E%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/1-2.jpg" alt="1-2" title="变量设置"></p>
 <h5 id="三、配置hexo"><a href="#三、配置hexo" class="headerlink" title="三、配置hexo"></a>三、配置hexo</h5><h6 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h6><p>管理员启动终端输入命令：</p>
 <pre><code>npm install hexo-cli -g
 </code></pre>
-<p>安装Hexo本体。<br>**若出现<code>禁止运行脚本</code>报错，解决办法见<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4eaad2163567">https://www.jianshu.com/p/4eaad2163567</a><br>新建文件夹，名字自定义，建议放在英文目录下，以避免一些路径识别的问题。运行命令：</p>
+<p>安装Hexo本体。<br><strong>若出现<code>禁止运行脚本</code>报错，解决办法见<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4eaad2163567">https://www.jianshu.com/p/4eaad2163567</a></strong><br>新建文件夹，名字自定义，建议放在英文目录下，以避免一些路径识别的问题。运行命令：</p>
 <pre><code>hexo init
 </code></pre>
 <p>初始化Hexo，随后运行：</p>
@@ -428,7 +439,7 @@ timezone: &#39;&#39;    #时区，一般不用管
 <h4 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h4><p>关于主题的选择，可供参考的教程非常多，且根据所选用主题不同有所差异。<br>这里主要讲一下本人选择的<a target="_blank" rel="noopener" href="https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic-Next">Hexo-Theme-Acrylic-Next</a>主题。<br>博客根目录运行</p>
 <pre><code>git clone -b main https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic-Next.git themes/Acrylic
 </code></pre>
-<p>安装主题。<br>修改全局设置<code>theme</code>后默认的<code>landscape</code>为<code>Acrylic</code>即可应用主题。<br>主题配置可参考<a target="_blank" rel="noopener" href="https://next-docs.acrylic.org.cn/introduction/introduction">https://next-docs.acrylic.org.cn/introduction/introduction</a> 作者自己讲的非常清楚。<br>**※有几个坑点： ** </p>
+<p>安装主题。<br>修改全局设置<code>theme</code>后默认的<code>landscape</code>为<code>Acrylic</code>即可应用主题。<br>主题配置可参考<a target="_blank" rel="noopener" href="https://next-docs.acrylic.org.cn/introduction/introduction">https://next-docs.acrylic.org.cn/introduction/introduction</a> 作者自己讲的非常清楚。<br><strong>※有几个坑点：</strong> </p>
 <ol>
 <li>语言文件’zh-Ch’中间为横杠并非下划线，打错的话不是启动报错就是一堆undefined和NaN</li>
 <li>要是打开里面的banner选项，下面注释掉的图片也需要启用，不然启动服务器的时候会报错</li>
@@ -543,13 +554,19 @@ git config --global user.email &quot;GitHub 邮箱&quot;
                             <a href="/tags/%E6%8A%98%E8%85%BE/" class="post-meta__tags">
                                 <span class="tags-punctuation">#</span>
                                 折腾
-                                <span class="tagsPageCount">1</span>
+                                <span class="tagsPageCount">2</span>
                             </a>
                         
                             <a href="/tags/%E8%B8%A9%E5%9D%91/" class="post-meta__tags">
                                 <span class="tags-punctuation">#</span>
                                 踩坑
-                                <span class="tagsPageCount">1</span>
+                                <span class="tagsPageCount">2</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%95%99%E7%A8%8B/" class="post-meta__tags">
+                                <span class="tags-punctuation">#</span>
+                                教程
+                                <span class="tagsPageCount">2</span>
                             </a>
                         
                     </div>
@@ -579,17 +596,22 @@ git config --global user.email &quot;GitHub 邮箱&quot;
 </div>
         <nav class="pagination-post" id="pagination">
     
-        
-            <div class="next-post pull-full">
-                <a href="/2023/07/26/hello-world/">
-                    <div class="pagination-info">
-                        <div class="label">下一篇</div>
-                        <div class="next_info">Hello World</div>
-                    </div>
-                </a>
-            </div>
-                
-        
+        <div class="prev-post pull-left">
+            <a href="/2023/07/27/%E5%88%A9%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%8A%98%E8%85%BE%E4%B8%8E%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95%EF%BC%9A2/">
+                <div class="pagination-info">
+                    <div class="label">上一篇</div>
+                    <div class="prev_info">利用hexo创建博客--折腾与踩坑记录：2</div>
+                </div>
+            </a>
+        </div>
+        <div class="next-post pull-right">
+            <a href="/2023/07/26/hello-world/">
+                <div class="pagination-info">
+                    <div class="label">下一篇</div>
+                    <div class="next_info">Hello World</div>
+                </div>
+            </a>
+        </div>
     
 </nav>
         
@@ -680,6 +702,29 @@ git config --global user.email &quot;GitHub 邮箱&quot;
         
         
             <div class="aside-list-item">
+                <a class="thumbnail" href="/2023/07/27/%E5%88%A9%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%8A%98%E8%85%BE%E4%B8%8E%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95%EF%BC%9A2/" title="利用hexo创建博客--折腾与踩坑记录：2">
+                    <img
+                        alt="利用hexo创建博客--折腾与踩坑记录：2"
+                        src="/img/bg-2.png">
+                </a>
+                <div class="content">
+                    
+                        <a class="article-recent_post_categories" href="/2023/07/27/%E5%88%A9%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%8A%98%E8%85%BE%E4%B8%8E%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95%EF%BC%9A2/">
+                            折腾
+                        </a>
+                    
+                        <a class="article-recent_post_categories" href="/2023/07/27/%E5%88%A9%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%8A%98%E8%85%BE%E4%B8%8E%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95%EF%BC%9A2/">
+                            教程
+                        </a>
+                    
+                    <a class="title" href="/2023/07/27/%E5%88%A9%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%8A%98%E8%85%BE%E4%B8%8E%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95%EF%BC%9A2/" title="利用hexo创建博客--折腾与踩坑记录：2">
+                        利用hexo创建博客--折腾与踩坑记录：2
+                    </a>
+                </div>
+            </div>
+                
+        
+            <div class="aside-list-item">
                 <a class="thumbnail" href="/2023/07/26/%E5%88%A9%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%8A%98%E8%85%BE%E4%B8%8E%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" title="利用hexo创建博客--折腾与踩坑记录">
                     <img
                         alt="利用hexo创建博客--折腾与踩坑记录"
@@ -689,6 +734,10 @@ git config --global user.email &quot;GitHub 邮箱&quot;
                     
                         <a class="article-recent_post_categories" href="/2023/07/26/%E5%88%A9%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%8A%98%E8%85%BE%E4%B8%8E%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
                             折腾
+                        </a>
+                    
+                        <a class="article-recent_post_categories" href="/2023/07/26/%E5%88%A9%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%8A%98%E8%85%BE%E4%B8%8E%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
+                            教程
                         </a>
                     
                     <a class="title" href="/2023/07/26/%E5%88%A9%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%8A%98%E8%85%BE%E4%B8%8E%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" title="利用hexo创建博客--折腾与踩坑记录">
@@ -886,4 +935,4 @@ git config --global user.email &quot;GitHub 邮箱&quot;
 </div>
     
     </body>
-</html><script>const posts=["2023/07/26/利用hexo创建博客-折腾与踩坑记录/","2023/07/26/hello-world/"];function toRandomPost(){ window.pjax ? pjax.loadUrl('/'+posts[Math.floor(Math.random()*posts.length)]) : window.open('/'+posts[Math.floor(Math.random()*posts.length)], "_self"); };</script>
+</html><script>const posts=["2023/07/27/利用hexo创建博客-折腾与踩坑记录：2/","2023/07/26/利用hexo创建博客-折腾与踩坑记录/","2023/07/26/hello-world/"];function toRandomPost(){ window.pjax ? pjax.loadUrl('/'+posts[Math.floor(Math.random()*posts.length)]) : window.open('/'+posts[Math.floor(Math.random()*posts.length)], "_self"); };</script>
